@@ -29,13 +29,13 @@ class MainWindow(QMainWindow):
         elif event.key() == Qt.Key_Down and self.map_zoom < 10:
             self.map_zoom += 1
         elif event.key() == Qt.Key_A:
-            self.map_ll[0] -= self.press_delta
+            self.map_ll[0] -= self.press_delta * self.map_zoom * 800
         elif event.key() == Qt.Key_D:
-            self.map_ll[0] += self.press_delta
+            self.map_ll[0] += 800 * self.press_delta * self.map_zoom
         elif event.key() == Qt.Key_S:
-            self.map_ll[1] -= self.press_delta
+            self.map_ll[1] -= 600 * self.press_delta * self.map_zoom
         elif event.key() == Qt.Key_W:
-            self.map_ll[1] += self.press_delta
+            self.map_ll[1] += 600 * self.press_delta * self.map_zoom
 
         self.update_map()
 
